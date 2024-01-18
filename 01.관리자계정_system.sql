@@ -53,3 +53,29 @@ create user DDL identified by DDL; -- 아이디, 패스워드
 grant RESOURCE, CONNECT to DDL;  --권한
 alter user DDL default TABLESPACE users quota UNLIMITED on users;
 
+-- project 사용자 계정 만들기 (4개 실행해서 성공떠야함 - 한꺼번에 블럭하고 실행) : 2023.12.12 프로젝트 인한 계정생성
+ALTER SESSION set "_oracle_script" = true;
+create user project identified by project; -- 아이디, 패스워드
+grant RESOURCE, CONNECT to project;  --권한
+alter user project default TABLESPACE users quota UNLIMITED on users;
+
+-- 계정이 잠겼을때 푸는법 (2023.12.20)
+--ALTER USER DDL ACCOUNT UNLOCK;
+
+-- jsp 사용자 계정 만들기 (23.12.22)
+ALTER SESSION set "_oracle_script" = true;
+create user jsp identified by jsp; -- 아이디, 패스워드
+grant RESOURCE, CONNECT to jsp;  --권한
+alter user jsp default TABLESPACE users quota UNLIMITED on users;
+
+-- mybatis 사용자 계정 만들기 (24.1.5)
+ALTER SESSION set "_oracle_script" = true;
+create user mybatis identified by mybatis; -- 아이디, 패스워드
+grant RESOURCE, CONNECT to mybatis;  --권한
+alter user mybatis default TABLESPACE users quota UNLIMITED on users;
+
+-- springboot 사용자 계정 만들기 (24.1.12)
+ALTER SESSION set "_oracle_script" = true;
+create user springboot identified by springboot; -- 아이디, 패스워드
+grant RESOURCE, CONNECT to springboot;  --권한
+alter user springboot default TABLESPACE users quota UNLIMITED on users;
